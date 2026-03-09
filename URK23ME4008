@@ -1,0 +1,47 @@
+package neymar;
+import java.util.Scanner;
+//Interface
+	// Implementing class 1
+	interface Shape {
+	    void area();
+	}
+
+	class Rectangle implements Shape {
+	    double length, width;
+
+	    Rectangle(double l, double w) {
+	        length = l;
+	        width = w;
+	    }
+
+	    @Override
+	    public void area() {
+	        System.out.println("Area of Rectangle: " + (length * width));
+	    }
+	}
+
+	// Implementing class 2
+	class Circle implements Shape {
+	    double radius;
+
+	    Circle(double r) {
+	        radius = r;
+	    }
+
+	    @Override
+	    public void area() {
+	        System.out.println("Area of Circle: " + (3.14 * radius * radius));
+	    }
+	}
+
+	public class InterfacePolymorphismDemo {
+	    public static void main(String[] args) {
+	        Shape s; // Interface reference
+
+	        s = new Rectangle(10, 5);
+	        s.area(); // Calls Rectangle's area()
+
+	        s = new Circle(7);
+	        s.area(); // Calls Circle's area()
+	    }
+	}
